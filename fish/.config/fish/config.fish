@@ -20,5 +20,11 @@ end
 
 # 设置别名
 alias sem="sudo -E emacs"
+alias sn="sudo -E nano"
 alias cl="clear"
-alias la="ls -a"
+alias ls="exa --icons"
+alias lsa="exa -a --icons"
+alias cat="bat"
+
+# use Starship
+starship init fish | source

@@ -48,12 +48,4 @@
 ;; 禁用鼠标右键双击剪切
 (fset 'mouse-save-then-kill 'ignore)
 
-;; 全选快捷键
-(global-set-key (kbd "s-a") 'mark-whole-buffer)
-;; 保存快捷键
-(global-set-key (kbd "C-c s") 'save-buffer)
-;; 删除光标所在行
-(global-set-key (kbd "C-S-k") 'kill-whole-line)
-
-
 (provide 'init-basic)
