@@ -21,7 +21,7 @@ echo "🚀 Starting stow process..."
 # 遍历并执行 stow
 for pkg in $packages
     echo "$info_color📦 Stowing $pkg...$reset_color"
-    if stow -v --target=$HOME $pkg
+    if stow -v --target=$HOME --override $pkg
         echo "$success_color✅ Successfully stowed $pkg!$reset_color"
     else
         echo "$error_color❌ Failed to stow $pkg!$reset_color"

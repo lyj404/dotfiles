@@ -1,1 +1,7 @@
 .gitignore
+README.md
+
+**/auto-save-list
+**/eln-cache
+**/tramp
+**/ido.last
