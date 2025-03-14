@@ -6,7 +6,7 @@ cd (dirname (status --current-filename))
 # 如果没有参数，默认处理所有包
 set packages $argv
 if test (count $argv) -eq 0
-    set packages "bash" "fish" "lazygit" "emacs"
+    set packages "bash" "nano" "fish" "lazygit" "emacs" "fcitx5-rime"
 end
 
 # 定义颜色

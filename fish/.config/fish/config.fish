@@ -20,5 +20,6 @@ end
 
 # 设置别名
 alias sem="sudo -E emacs"
+alias sn="sudo -E nano"
 alias cl="clear"
 alias la="ls -a"
