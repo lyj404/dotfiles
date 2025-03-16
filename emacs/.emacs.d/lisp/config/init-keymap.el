@@ -1,5 +1,5 @@
 ;; 全选快捷键
-(global-set-key (kbd "s-a") 'mark-whole-buffer)
+(global-set-key (kbd "C-c a") 'mark-whole-buffer)
 ;; 保存快捷键
 (global-set-key (kbd "C-c s") 'save-buffer)
 ;; 删除光标所在行
