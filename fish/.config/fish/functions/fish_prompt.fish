@@ -13,7 +13,7 @@ end
 
 function fish_prompt
     # 颜色定义（路径和箭头使用淡绿色 87ff5f）
-    set -l path_color (set_color FFD700)  # 路径颜色
+    set -l path_color (set_color EED2EE)  # 路径颜色
     set -l blue (set_color 00afff)
     set -l magenta (set_color af87ff)
     set -l green (set_color 87ff00)

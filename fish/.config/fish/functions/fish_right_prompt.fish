@@ -3,7 +3,7 @@ function fish_right_prompt
     set -l last_status $status
 
     # 颜色和图标定义
-    set -l success_color (set_color 87ff5f)  # 绿色
+    set -l success_color (set_color 00FF7F)  # 绿色
     set -l error_color (set_color ff5f5f)    # 红色
     set -l success_icon "󰔟"                   # 倒计时图标
     set -l error_icon "󰅚 "                     # 错误图标
