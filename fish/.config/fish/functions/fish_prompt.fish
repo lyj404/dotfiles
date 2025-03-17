@@ -1,45 +1,49 @@
-# name: fishy-drupal
+# fish_prompt.fish
+
 function _git_branch_name
-  echo (command git symbolic-ref HEAD 2> /dev/null | sed -e 's|^refs/heads/||')
+    git symbolic-ref --short HEAD 2>/dev/null
 end
 
-function _is_git_dirty
-  echo (command git status -s --ignore-submodules=dirty 2> /dev/null)
-end
-
-function _drush_alias_name
-  set -l pid %self
-  if test -f "$TMPDIR/drush-env/drush-drupal-site-$pid"
-    echo (command cat $TMPDIR/drush-env/drush-drupal-site-$pid)
-  end
+function _git_status_icons
+    set -l changes (git status --porcelain 2>/dev/null | wc -l | tr -d ' ')
+    if test $changes -gt 0
+        echo (set_color red)"[?]"
+    end
 end
 
 function fish_prompt
-  set -l code $status
+    # 颜色定义（路径和箭头使用淡绿色 87ff5f）
+    set -l path_color (set_color FFD700)  # 路径颜色
+    set -l blue (set_color 00afff)
+    set -l magenta (set_color af87ff)
+    set -l green (set_color 87ff00)
+    set -l red (set_color ff005f)
+    set -l normal (set_color normal)
 
-  set -l cyan (set_color -o cyan)
-  set -l yellow (set_color -o yellow)
-  set -l red (set_color -o red)
-  set -l blue (set_color -o blue)
-  set -l normal (set_color normal)
+    # 状态箭头（始终使用淡绿色）
+    set prompt_segment $path_color"❯"
 
-  test $code = 0; and set -l arrow "$blue➜ "; or set -l arrow "$red➜ "
-  set -l cwd (set_color $fish_color_cwd)(prompt_pwd)
-
-  if [ (_git_branch_name) ]
-    set -l git_branch $red(_git_branch_name)
-    set git_info "$blue git:($git_branch$blue)"
-
-    if [ (_is_git_dirty) ]
-      set -l dirty "$yellow ✗"
-      set git_dirty "$dirty"
+    # 路径显示逻辑
+    set -l full_cwd (pwd)
+    if test "$full_cwd" = "$HOME"
+        set cwd $path_color(whoami)  # 直接显示用户名
+    else
+        set cwd $path_color(string replace -r "^$HOME" '~' "$full_cwd")
     end
-  end
 
-  if [ (_drush_alias_name) ]
-    set -l drush_alias $blue(_drush_alias_name)
-    set drush_info "$green drush:($drush_alias$green)"
-  end
+    # Git 信息
+    set -l git_info
+    if set -l branch_name (_git_branch_name)
+        set -l status_icons (_git_status_icons)
+        set git_info $magenta" $branch_name $status_icons"
+    end
 
-  echo -n -s $arrow $cwd $git_info $drush_info $git_dirty $normal ' '
+    # 组合提示符（避免命令替换）
+    set -l prompt_line $cwd
+    if test -n "$git_info"
+        set prompt_line "$prompt_line $git_info"
+    end
+
+    # 最终输出（固定一个箭头前空格）
+    echo -n -s $prompt_line $normal " $prompt_segment "
 end

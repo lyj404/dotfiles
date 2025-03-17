@@ -22,4 +22,5 @@ end
 alias sem="sudo -E emacs"
 alias sn="sudo -E nano"
 alias cl="clear"
-alias la="ls -a"
+alias ls="exa --icons"
+alias lsa="ls -a"
