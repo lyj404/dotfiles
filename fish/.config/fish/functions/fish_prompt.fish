@@ -1,5 +1,3 @@
-# fish_prompt.fish
-
 function _git_branch_name
     git symbolic-ref --short HEAD 2>/dev/null
 end
@@ -7,13 +5,15 @@ end
 function _git_status_icons
     set -l changes (git status --porcelain 2>/dev/null | wc -l | tr -d ' ')
     if test $changes -gt 0
-        echo (set_color red)"[?]"
+        echo (set_color red)"[!]"
+    else
+        echo (set_color green)"[✔]"
     end
 end
 
 function fish_prompt
-    # 颜色定义（路径和箭头使用淡绿色 87ff5f）
-    set -l path_color (set_color EED2EE)  # 路径颜色
+    # 颜色定义（路径使用黄色）
+    set -l path_color (set_color FFEB3B)  # 路径颜色改为黄色
     set -l blue (set_color 00afff)
     set -l magenta (set_color af87ff)
     set -l green (set_color 87ff00)
