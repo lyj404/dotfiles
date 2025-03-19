@@ -21,20 +21,21 @@ function fish_right_prompt
         set duration $CMD_DURATION
     end
 
-    # 时间格式化（即使 duration 为 0 也显示）
+    # 时间格式化
     set -l time_str
-    if test $duration -lt 1000
-        set time_str $duration"ms"
+    if test $duration -lt 1
+        set time_str "<1ms"  # 小于 1 毫秒直接显示为 <1ms
+    else if test $duration -lt 1000
+        set time_str (math -s0 $duration)"ms"
     else if test $duration -lt 60000
-        set seconds (math -s1 "$duration / 1000")
-        set seconds (string replace -r '\.0$' '' -- $seconds)
+        set seconds (math -s0 "$duration / 1000")  # 秒数直接取整
         set time_str $seconds"s"
     else
-        set minutes (math "$duration / 60000")
-        set seconds (math "($duration % 60000) / 1000")
+        set minutes (math -s0 "$duration / 60000")  # 分钟数直接取整
+        set seconds (math -s0 "($duration % 60000) / 1000")  # 秒数直接取整
         set time_str $minutes"m"$seconds"s"
     end
 
-    # 显示成功图标和时间（包括 0ms）
+    # 显示成功图标和时间
     echo -n -s $success_color$success_icon" "$success_color$time_str
 end
