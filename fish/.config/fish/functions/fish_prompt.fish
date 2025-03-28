@@ -12,38 +12,33 @@ function _git_status_icons
 end
 
 function fish_prompt
-    # 颜色定义（路径使用黄色）
-    set -l path_color (set_color FFEB3B)  # 路径颜色改为黄色
-    set -l blue (set_color 00afff)
-    set -l magenta (set_color af87ff)
-    set -l green (set_color 87ff00)
+    # 颜色定义
+    set -l cyan (set_color 8be9fd)
+    set -l magenta (set_color bd93f9)
+    set -l green (set_color 50fa7b)
     set -l red (set_color ff005f)
     set -l normal (set_color normal)
 
-    # 状态箭头（始终使用淡绿色）
-    set prompt_segment $path_color"❯"
-
-    # 路径显示逻辑
+    # 路径显示
     set -l full_cwd (pwd)
     if test "$full_cwd" = "$HOME"
-        set cwd $path_color(whoami)  # 直接显示用户名
+        set cwd $cyan(whoami)
     else
-        set cwd $path_color(string replace -r "^$HOME" '~' "$full_cwd")
+        set cwd $cyan(string replace -r "^$HOME" '~' "$full_cwd")
     end
 
-    # Git 信息
+    # Git信息
     set -l git_info
     if set -l branch_name (_git_branch_name)
         set -l status_icons (_git_status_icons)
         set git_info $magenta" $branch_name $status_icons"
     end
 
-    # 组合提示符（避免命令替换）
-    set -l prompt_line $cwd
+    # 分步输出+颜色重置
+    echo -n -s $cwd$normal
     if test -n "$git_info"
-        set prompt_line "$prompt_line $git_info"
+        echo -n -s " "$git_info$normal
     end
-
-    # 最终输出（固定一个箭头前空格）
-    echo -n -s $prompt_line $normal " $prompt_segment "
+    echo -n -s " " $cyan"❯" $normal" "
 end
+

@@ -6,6 +6,9 @@
 (global-set-key (kbd "C-S-k") 'kill-whole-line)
 ;; 复制当前行到下一行
 (global-set-key (kbd "C-c n") 'copy-line-to-next-line)
+;; 注释和取消注释
+(global-set-key (kbd "C-c SPC") 'comment-or-uncomment-region)
+
 
 (defun copy-line-to-next-line ()
   "Copy the current line to the next line, placing the cursor at the end of the new line."
