@@ -1,11 +1,18 @@
+# ~/.config/starship.toml
+
 # 根据 schema 提供自动补全
 "$schema" = 'https://starship.rs/config-schema.json'
+
+# right prompt
+right_format = """
+$env_var
+"""
 
 # 在提示符之间插入空行
 add_newline = false
 
 # 将提示符中的 '❯' 替换为 '➜'
-[character] # 此组件名称为 'character'
+[character]
 success_symbol = '[➜](bold green)' # 将 'success_symbol' 字段设置成颜色为 'bold green' 的 '➜'
 
 [aws]
@@ -104,6 +111,10 @@ symbol = " "
 [ocaml]
 symbol = " "
 
+[os]
+style = 'bold purple'
+disabled = false
+
 [os.symbols]
 Alpaquita = " "
 Alpine = " "
@@ -117,7 +128,7 @@ CentOS = " "
 Debian = " "
 DragonFly = " "
 Emscripten = " "
-EndeavourOS = " "
+EndeavourOS = " "
 Fedora = " "
 FreeBSD = " "
 Garuda = "󰛓 "
@@ -188,3 +199,12 @@ symbol = " "
 
 [gradle]
 symbol = " "
+
+[cmd_duration]
+min_time = 500
+
+[env_var.http_proxy]
+variable = 'http_proxy'
+format = "[$env_value]($style) "
+default = ''
+style = 'bold #82AAFF'
