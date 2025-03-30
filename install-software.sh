@@ -80,7 +80,7 @@ function main() {
 
     # 安装官方包
     echo -e "\n\033[1;32m安装官方仓库软件包...\033[0m"
-    sudo pacman -S --needed $CONFIRM_OPTION fish stow nano emacs starship exa bat
+    sudo pacman -S --needed $CONFIRM_OPTION fish stow nano emacs starship exa bat zed
 
     # 安装AUR包
     echo -e "\n\033[1;35m安装AUR软件包...\033[0m"

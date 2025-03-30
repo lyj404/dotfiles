@@ -21,7 +21,6 @@ end
 # 设置别名
 alias sem="sudo -E emacs"
 alias sn="sudo -E nano"
-alias cl="clear"
 alias ls="exa --icons"
 alias lsa="exa -a --icons"
 alias cat="bat"

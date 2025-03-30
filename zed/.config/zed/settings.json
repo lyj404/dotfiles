@@ -1,0 +1,60 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "base_keymap": "VSCode",
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  "autosave": "on_focus_change",
+  "format_on_save": "on",
+  "terminal": {
+    "shell": "system"
+  },
+  "restore_on_startup": "last_session",
+  "tabs": {
+    "file_icons": true,
+    "git_status": true,
+    "show_diagnostics": "errors"
+  },
+  "inlay_hints": {
+    "enabled": true
+  },
+  "soft_wrap": "editor_width",
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings",
+    "**/vendor",
+    "**/.tmp*"
+  ],
+  // 不允许 Zed Industries 收集匿名使用数据
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "unnecessary_code_fade": 0.7, //淡化未使用的代码
+  "lsp_highlight_debounce": 75, // LSP 提示防抖延迟，ms
+  "languages": {
+    "Go": {
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      }
+    }
+  }
+}

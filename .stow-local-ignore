@@ -1,5 +1,9 @@
-# 忽略 Stow 包内（~/dotfiles/emacs/）的 .emacs.d/ 下的指定内容
+# 忽略~/dotfiles/emacs/.emacs.d/ 下的指定内容
 ^\.emacs\.d/tramp(/|$)         # 忽略目录 tramp/ 及其内容
 ^\.emacs\.d/ido\.last$         # 忽略文件 ido.last
 ^\.emacs\.d/eln-cache(/|$)     # 忽略目录 eln-cache/ 及其内容
 ^\.emacs\.d/auto-save-list(/|$)# 忽略目录 auto-save-list/ 及其内容
+^\.emacs\.d/tree-sitter(/|$)# 忽略目录 tree-sitter/ 及其内容
+
+# 忽略~/dotfiles/zed/.config/zed/theme/ 下的指定内容
+^\.config/zed/theme
