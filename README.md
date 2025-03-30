@@ -1,6 +1,7 @@
 # ⚡️ 前置要求
 * bat
 * exa
+* zed
 * fish
 * stow
 * nano
@@ -15,7 +16,7 @@
 
 通过包管理器安装
 ```
-sudo pacman -S fish stow nano emacs starship exa bat
+sudo pacman -S fish stow nano emacs starship exa bat zed
 yay -S lazygit rime-ice-git nerd-fonts-jetbrains-mono
 ```
 **方式二**：
