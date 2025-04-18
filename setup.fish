@@ -6,7 +6,7 @@ cd (realpath ~/dotfiles) || exit 1
 # 默认包列表
 set packages $argv
 if test (count $argv) -eq 0
-    set packages bash nano fish lazygit emacs starship fcitx5-rime zed
+    set packages bash nano fish lazygit emacs starship fcitx5-rime zed wechat-universal
 end
 
 # 定义颜色
