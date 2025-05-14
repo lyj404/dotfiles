@@ -2,6 +2,7 @@
 * bat
 * exa
 * zed
+* vfox
 * fish
 * stow
 * nano
@@ -10,7 +11,7 @@
 * lazygit
 * rime-ice-git
 * nerd-fonts-jetbrains-mono
-> 在使用相关配置文件之前，需要先安装上述所有软件
+> 在使用相关配置文件之前，需要先安装上述所有软件，vfox需要手动安装
 ## 安装方式
 **方式一**：
 

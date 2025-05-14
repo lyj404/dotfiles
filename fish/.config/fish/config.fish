@@ -27,3 +27,4 @@ alias cat="bat"
 
 # use Starship
 starship init fish | source
+vfox activate fish | source
