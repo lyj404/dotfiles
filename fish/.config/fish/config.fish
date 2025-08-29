@@ -7,8 +7,8 @@ end
 
 # 设置代理
 function proxy
-    set -gx http_proxy "http://127.0.0.1:12345"
-    set -gx https_proxy "http://127.0.0.1:12345"
+    set -gx http_proxy "http://127.0.0.1:12334"
+    set -gx https_proxy "http://127.0.0.1:12334"
     echo "✅ Proxy started"
 end
 
