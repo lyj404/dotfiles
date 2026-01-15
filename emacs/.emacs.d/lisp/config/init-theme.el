@@ -1,4 +1,4 @@
 (require 'lazycat-theme)
-(lazycat-theme-load-light)
+(lazycat-theme-load-dark)
 
 (provide 'init-theme)
