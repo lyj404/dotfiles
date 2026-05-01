@@ -7,8 +7,8 @@ end
 
 # use proxy
 function proxy
-    set -gx http_proxy "http://127.0.0.1:12334"
-    set -gx https_proxy "http://127.0.0.1:12334"
+    set -gx http_proxy "http://127.0.0.1:7890"
+    set -gx https_proxy "http://127.0.0.1:7890"
     echo "✅ Proxy started"
 end
 
@@ -18,6 +18,8 @@ function unproxy
     set -e https_proxy
     echo "❌ Proxy stopped"
 end
+
+set -gx V_API_KEY "sk-ksAoE8Drz8FQHGb82wWGqtCNO4tI4qwEbVjEpbrS0fTBdAWq"
 
 # setting alias
 alias sem="sudo -E emacs"
