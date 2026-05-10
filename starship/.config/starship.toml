@@ -1,5 +1,13 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+# right prompt
+right_format = """$env_var"""
+
+[env_var.http_proxy]
+format = '\[[🌐 $env_value]($style)\]'
+style = 'bold yellow'
+disabled = false
+
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
 
