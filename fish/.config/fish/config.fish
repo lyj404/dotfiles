@@ -26,7 +26,9 @@ alias sem="sudo -E emacs"
 alias sn="sudo -E nano"
 alias ls="exa --icons"
 alias lsa="exa -a --icons"
-alias cat="bat"
+alias cat="bat --style=plain"
+alias claude-any="claude --settings ~/.claude/settings.anyrouter.json"
+alias claude-mimo="claude --settings ~/.claude/settings.mimo.json"
 
 starship init fish | source
 vfox activate fish | source
